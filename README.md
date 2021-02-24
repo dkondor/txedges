@@ -1,7 +1,7 @@
 # txedges
 Join Bitcoin transaction inputs and outputs to create an approximate weighted graph between addresses.
 
-This program converts the list of transaction inputs and outputs to a list of directed weighted edges between addresses. Input is expected in the format similar to the files available at https://senseable2015-6.mit.edu/bitcoin/. Notably, transaction IDs and address IDs are expected to be nonnegative integers with the special address value -1 also accepted (this denotes addresses that could not be decoded in the aforementioned dataset). No special handling is performed for this special value, i.e. all appearances of address -1 are treated as it was a normal address. Currently, transaction IDs are expected to be less than 2^32, while address IDs are expected to be less than 2^31. The input files are expected to be sorted by transaction IDs.
+This program converts the list of transaction inputs and outputs to a list of directed weighted edges between addresses. Input is expected in the format similar to the files available at https://doi.org/10.5061/dryad.qz612jmcf or https://senseable2015-6.mit.edu/bitcoin/. Notably, transaction IDs and address IDs are expected to be nonnegative integers with the special address value -1 also accepted (this denotes addresses that could not be decoded in the aforementioned dataset). No special handling is performed for this special value, i.e. all appearances of address -1 are treated as it was a normal address. Currently, transaction IDs are expected to be less than 2^32, while address IDs are expected to be less than 2^31. The input files are expected to be sorted by transaction IDs.
 
 Output is written to the standard output as TSV with columns: txID, in\_addr, out\_addr, weight
 
@@ -32,5 +32,7 @@ Command line arguments specify the file containing transaction inputs (-i) and t
 
 Further example use to extract transactions only for one day is given in the txedge_1day.sh script.
 
+## See also
 
+https://github.com/dkondor/patest_new for more code processing the Bitcoin and Ethereum transaction networks.
 
